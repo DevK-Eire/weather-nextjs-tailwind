@@ -11,13 +11,17 @@ Added Icons
 Changed the format to colum and not row.
 Underline disapears when smaller.
 
-## 
+## Tutorial
 
 Thanks to Clint 
 
 https://www.youtube.com/watch?v=b9fWvR5O0Hc
 
+## Open Weather Api
 
+Grab your Weather API key here
+
+https://openweathermap.org/api
 
 ## Getting Started
 
