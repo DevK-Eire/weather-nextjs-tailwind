@@ -5,8 +5,30 @@ import React from 'react';
 import { FaTemperatureArrowDown, FaTemperatureArrowUp  } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
 
+interface WeatherData {
+  name: string;
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    humidity: number;
+  };
+  weather: Array<{
+    icon: string;
+    main: string;
+  }>;
+  wind: {
+    speed: number;
+  };
+}
 
-const Weather = ({ data }) => {
+interface WeatherProps {
+  data: WeatherData;
+}
+
+
+const Weather: React.FC<WeatherProps> = ({ data }) => {
   
   return (
     <div className='relative flex flex-col justify-between max-w-[500px] w-full xl:h-[90vh] m-auto p-4 text-gray-300 z-10'>
