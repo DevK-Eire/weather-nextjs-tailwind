@@ -33,7 +33,7 @@ const Weather = ({ data }) => {
               <p className='text-4xl xl:text-6xl'>{data.main.temp.toFixed(0)}&#176;</p>
     </div>
 </div>
-
+ 
       {/* Bottom */}
 
 <div className='bg-slate-700/70 relative p-8 rounded-xl border border-white/20'>
