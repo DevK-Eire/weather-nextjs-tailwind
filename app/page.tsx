@@ -70,20 +70,24 @@ export default function Home() {
         />
   
        {/* Search */}
-       <div className='relative flex justify-between items-center max-w-[500px] m-auto pt-4 text-white z-10'>
+       <div className='relative flex justify-between items-center max-w-[500px] m-auto pt-4 p-3 text-white z-10'>
   <form onSubmit={fecthWeather} className='flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
     <div>
       <input 
         onChange={(e) => setCity(e.target.value)}
         value={city}
-        className='bg-transparent border-none text-white focus:outline-none text-2xl placeholder:text-white' 
+        className='bg-transparent border-none text-white focus:outline-none md:text-2xl placeholder:text-white' 
         type="text" 
         placeholder='Search City' 
       />
+      
     </div>
+    <div className='md:text-2xl md:mr-6'>
     <button type="submit">
-      <BsSearch size={20}/>
+      <BsSearch className=''/>
     </button>
+    </div>
+    
   </form>
 </div>
   

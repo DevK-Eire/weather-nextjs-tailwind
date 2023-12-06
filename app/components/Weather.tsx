@@ -59,31 +59,31 @@ const Weather: React.FC<WeatherProps> = ({ data }) => {
       {/* Bottom */}
 
 <div className='bg-slate-700/70 relative p-8 rounded-xl border border-white/20'>
-    <p className='text-3xl text-center pb-10 md:underline underline-offset-8'>Weather in {data.name}</p>
+    <p className='text-xl md:text-3xl text-center pb-10 md:underline underline-offset-8 font-bold '>Weather in {data.name}</p>
     <div className='flex flex-col bg-slate-700/80 justify-between text-center px-8 rounded-xl border border-white/20'>
         <div className='flex justify-between gap-7 p-2'>
-            <p className='text-2xl'>Feels Like</p>
-            <p className='font-bold text-2xl'>{data.main.feels_like.toFixed(0)}&#176;</p>
+            <p className='font-bold md:text-2xl'>Feels Like</p>
+            <p className='font-bold md:text-2xl'>{data.main.feels_like.toFixed(0)}&#176;</p>
             
         </div>
         <div className='flex justify-between gap-7 p-2'>
-            <p className='text-2xl'>Humidity</p>
-            <p className='font-bold text-2xl items-center flex text-center justify-center gap-1'>{data.main.humidity} <WiHumidity className='text-3xl' /></p>
+            <p className='font-bold  md:text-2xl'>Humidity</p>
+            <p className='font-bold md:text-2xl items-center flex text-center justify-center gap-1'>{data.main.humidity} <WiHumidity className='text-3xl' /></p>
             
         </div>
         <div className='flex gap-7 p-2 justify-between'>
-            <p className='text-2xl'>Winds</p>
-            <p className='font-bold text-2xl items-center flex text-center justify-center gap-2'>{data.wind.speed.toFixed(0)} MPH <FaWind /></p>            
+            <p className='font-bold md:text-2xl'>Winds</p>
+            <p className='font-bold md:text-2xl items-center flex text-center justify-center gap-2'>{data.wind.speed.toFixed(0)} MPH <FaWind /></p>            
         </div>
         <div className='flex justify-between gap-7 p-2'>
-            <p className='text-2xl'>Min Temp</p>
-            <p className='font-bold text-2xl items-center flex text-center justify-center gap-3'>{data.main.temp_min.toFixed(0)} <FaTemperatureArrowDown className='text-blue-500'/></p>
+            <p className='font-bold md:text-2xl'>Min Temp</p>
+            <p className='font-bold md:text-2xl items-center flex text-center justify-center gap-3'>{data.main.temp_min.toFixed(0)} <FaTemperatureArrowDown className='text-blue-500'/></p>
             
             
         </div >
         <div className='flex justify-between gap-7 p-2'>
-            <p className='text-2xl'>Max Temp</p>
-            <p className='font-bold text-2xl items-center flex text-center justify-center gap-3'>{data.main.temp_max.toFixed(0)} <FaTemperatureArrowUp className='text-red-500'/></p>
+            <p className='font-bold md:text-2xl'>Max Temp</p>
+            <p className='font-bold md:text-2xl items-center flex text-center justify-center gap-3'>{data.main.temp_max.toFixed(0)} <FaTemperatureArrowUp className='text-red-500'/></p>
            
         </div>
         </div>
