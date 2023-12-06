@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import Head from 'next/head'
+
 import axios from 'axios'
 import { useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
@@ -9,12 +9,33 @@ import background  from '../app/assets/background.avif'
 import Weather from './components/Weather'
 import Spinner from './components/Spinner'
 
+interface WeatherData {
+  name: string;
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    humidity: number;
+  };
+  weather: Array<{
+    icon: string;
+    main: string;
+  }>;
+  wind: {
+    speed: number;
+  };
+}
+
+interface WeatherProps {
+  data: WeatherData;
+}
 
 
 
 export default function Home() {
   const [city, setCity] = useState('')
-  const [weather, setWeather] = useState({})
+  const [weather, setWeather] = useState<WeatherData | undefined>(undefined);
   const [loading, setLoading] = useState(false)
 
 
@@ -23,7 +44,7 @@ export default function Home() {
   
   
 
-  const fecthWeather =  (e) => {
+  const fecthWeather =  (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
     axios.get(url)
@@ -49,23 +70,26 @@ export default function Home() {
         />
   
        {/* Search */}
-        <div className='relative flex justify-between items-center max-w-[500px] m-auto pt-4 text-white z-10'>
-          <form onSubmit={fecthWeather} className='flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
-            <div>
-               <input 
-               onChange={(e) => setCity(e.target.value)}
-               className='bg-transparent border-none text-white focus:outline-none text-2xl placeholder:text-white' type="text" placeholder='Search City' />
-            </div>
-            <button onClick={fecthWeather}>
-              <BsSearch size={20}/>
-            </button>
-          </form>
-          
-        </div>
+       <div className='relative flex justify-between items-center max-w-[500px] m-auto pt-4 text-white z-10'>
+  <form onSubmit={fecthWeather} className='flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
+    <div>
+      <input 
+        onChange={(e) => setCity(e.target.value)}
+        value={city}
+        className='bg-transparent border-none text-white focus:outline-none text-2xl placeholder:text-white' 
+        type="text" 
+        placeholder='Search City' 
+      />
+    </div>
+    <button type="submit">
+      <BsSearch size={20}/>
+    </button>
+  </form>
+</div>
   
         {/* Weather */}
   
-        {weather.main && <Weather data={weather} />}
+        {weather?.main && <Weather data={weather} />}
   
       
       </main>
