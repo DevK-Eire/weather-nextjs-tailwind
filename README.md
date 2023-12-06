@@ -1,5 +1,28 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+##
+
+Code is now TypeScript.
+
+Search any City in the world.
+
+Added Min and Max Temp.
+Added Icons
+Changed the format to colum and not row.
+Underline disapears when smaller.
+
+## Tutorial
+
+Thanks to Clint 
+
+https://www.youtube.com/watch?v=b9fWvR5O0Hc
+
+## Open Weather Api
+
+Grab your Weather API key here
+
+https://openweathermap.org/api
+
 ## Getting Started
 
 First, run the development server:
@@ -33,3 +56,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # weather-nextjs-tailwind
+
+## Demo
+
+[Live Demo](https://weather-nextjs-tailwind-devk-eire.vercel.app/)
+
+
